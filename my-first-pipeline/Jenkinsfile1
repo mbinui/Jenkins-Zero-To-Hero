@@ -1,5 +1,6 @@
 pipeline {
     agent {
+        label 'maven-sonar'
         docker { 
             image 'node:16-alpine'
             label 'myLabel'
