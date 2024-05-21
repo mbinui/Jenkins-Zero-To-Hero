@@ -1,0 +1,16 @@
+pipeline {
+    agent {
+        label 'maven-sonar'
+    }
+    stages {
+        stage('Test') {
+            steps {
+                script {
+                    docker.image('node:16-alpine').inside {
+                        sh 'node --version'
+                    }
+                }
+            }
+        }
+    }
+}
